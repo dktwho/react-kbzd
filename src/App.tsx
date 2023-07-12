@@ -7,7 +7,8 @@ function App() {
     return (
         <div className="App">
             <div>
-                <AppTitle/>
+                <PageTitle title={'This is App component!!!'}/>
+                <PageTitle title={'My friends'}/>
                 Article 1
                 <Rating value={1}/>
                 <Accordion/>
@@ -24,9 +25,9 @@ function App() {
 }
 
 
-function AppTitle() {
+function PageTitle(props: any) {
     return (
-        <div>This is App component</div>
+        <h2>{props.title}</h2>
     )
 }
 
