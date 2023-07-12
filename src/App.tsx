@@ -5,7 +5,7 @@ function App() {
     return (
         <div className="App">
             <div>
-                This App component
+                <AppTitle/>
                 <Rating/>
                 <Accordion/>
             </div>
@@ -29,12 +29,8 @@ function Rating() {
 function Accordion() {
     return (
         <div>
-            <h3>Menu</h3>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+            <AccordionTitle/>
+            <AccordionBody/>
         </div>
     )
 }
@@ -42,6 +38,28 @@ function Accordion() {
 function Star() {
     return (
         <div>star</div>
+    )
+}
+
+function AppTitle() {
+    return (
+        <>This is App component</>
+    )
+}
+
+function AccordionTitle() {
+    return (
+        <h3>Menu</h3>
+    )
+}
+
+function AccordionBody() {
+    return (
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
     )
 }
 
