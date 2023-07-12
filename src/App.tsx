@@ -4,9 +4,11 @@ import './App.css';
 function App() {
     return (
         <div className="App">
-            <div>This App component</div>
-            <Rating/>
-            <Accordion />
+            <div>
+                This App component
+                <Rating/>
+                <Accordion/>
+            </div>
         </div>
     );
 }
@@ -14,11 +16,11 @@ function App() {
 function Rating() {
     return (
         <div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
         </div>
 
     )
@@ -34,6 +36,12 @@ function Accordion() {
                 <li>3</li>
             </ul>
         </div>
+    )
+}
+
+function Star() {
+    return (
+        <div>star</div>
     )
 }
 
