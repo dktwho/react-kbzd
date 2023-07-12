@@ -3,17 +3,19 @@ import React from "react";
 export function Rating() {
     return (
         <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
+            <Star selected={true}/>
+            <Star selected={true}/>
+            <Star selected={false}/>
+            <Star selected={false}/>
+            <Star selected={false}/>
         </div>
     )
 }
 
-function Star() {
+
+function Star(props: any) {
+
     return (
-        <div>star</div>
+        <span> {props.selected ? <b>star</b> : 'star'}</span>
     )
 }
