@@ -10,7 +10,6 @@ function App() {
                 <PageTitle title={'This is App component!!!'}/>
                 <PageTitle title={'My friends'}/>
                 Article 1
-                <Rating value={1}/>
                 <Accordion titleValue={'---Menu---'} collapsed={true}/>
                 <Accordion titleValue={'---Users---'} collapsed={false}/>
                 Article 2
