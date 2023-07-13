@@ -4,6 +4,7 @@ import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import OnOffWithState from "./components/OnOff/OnOffWithState";
+import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
 
 function App() {
     return (
@@ -14,6 +15,11 @@ function App() {
                 Article 1
                 <Accordion titleValue={'---Menu---'} collapsed={true}/>
                 <Accordion titleValue={'---Users---'} collapsed={false}/>
+                <br/>
+                <hr/>
+                <h2>Uncontrolled accordion with state inside for collapsed</h2>
+                <UnControlledAccordion titleValue={'---Menu---'} />
+                <UnControlledAccordion titleValue={'---Users---'} />
                 Article 2
                 <Rating value={0}/>
                 <Rating value={1}/>
