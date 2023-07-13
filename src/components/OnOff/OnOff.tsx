@@ -13,6 +13,8 @@ export const OnOff = (props: OnOffPropsType) => {
             </span>
             <div className={props.status ? styled.indicatorActive : styled.indicatorInActive}></div>
         </div>
+
+
     );
 };
 

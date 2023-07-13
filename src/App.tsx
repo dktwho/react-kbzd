@@ -3,6 +3,7 @@ import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
+import OnOffWithState from "./components/OnOff/OnOffWithState";
 
 function App() {
     return (
@@ -23,6 +24,8 @@ function App() {
                 <hr/>
                 <OnOff status={true} />
                 <OnOff status={false} />
+                <hr/>
+                <OnOffWithState />
             </div>
         </div>
     );

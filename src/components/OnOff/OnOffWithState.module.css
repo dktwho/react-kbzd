@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 5px 5px;
+}
+
+
+.indicatorActive {
+    border: 1px solid black;
+    background-color:greenyellow ;
+    border-radius: 30px ;
+    width: 15px;
+    height: 15px;
+    margin:0 4px;
+}
+
+.indicatorInActive {
+    border: 1px solid black;
+    background-color: red;
+    border-radius: 30px ;
+    width: 15px;
+    height: 15px;
+    margin:0 4px;
+}
+
+.templateBtn {
+    background-color: gray;
+}
+.activeBtn {
+    background-color: greenyellow;
+}
+
+.inActiveBtn {
+    background-color: red;
+}
