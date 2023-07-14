@@ -18,8 +18,7 @@ function App() {
                 <br/>
                 <hr/>
                 <h2>Uncontrolled accordion with state inside for collapsed</h2>
-                <UnControlledAccordion titleValue={'---Menu---'} />
-                <UnControlledAccordion titleValue={'---Users---'} />
+                <UnControlledAccordion titleValue={'---Frontend Stack---'} />
                 Article 2
                 <Rating value={0}/>
                 <Rating value={1}/>
