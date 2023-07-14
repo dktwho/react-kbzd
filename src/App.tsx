@@ -8,11 +8,11 @@ import {UnControlledAccordion} from "./components/UnControlledAccordion/UnContro
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 
 function App() {
+
     return (
         <div className="App">
             <div>
                 <PageTitle title={'This is App component!!!'}/>
-                <PageTitle title={'My friends'}/>
                 Article 1
                 <Accordion titleValue={'---Menu---'} collapsed={true}/>
                 <Accordion titleValue={'---Users---'} collapsed={false}/>
@@ -25,15 +25,15 @@ function App() {
                 <br/>
                 <hr/>
                 <h2>Uncontrolled accordion with state inside for collapsed</h2>
-                <UnControlledAccordion titleValue={'---Frontend Stack---'} />
+                <UnControlledAccordion titleValue={'---Frontend Stack---'}/>
                 <h2>Uncontrolled rating without props, used useState</h2>
                 Article 2
-                <UnControlledRating />
+                <UnControlledRating/>
                 <hr/>
-                <OnOff status={true} />
-                <OnOff status={false} />
+                <OnOff status={true}/>
+                <OnOff status={false}/>
                 <hr/>
-                <OnOffWithState />
+                <OnOffWithState/>
             </div>
         </div>
     );
