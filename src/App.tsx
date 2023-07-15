@@ -10,6 +10,7 @@ import {UnControlledRating} from "./components/UnControlledRating/UnControlledRa
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [accordion, setAccordion] = useState<boolean>(false)
+    const [indicator, setIndicator] = useState<boolean>(true)
     return (
         <div className="App">
             <div>
@@ -24,9 +25,10 @@ function App() {
                 Article 2
                 <UnControlledRating/>
                 <hr/>
-                <OnOff status={true}/>
-                <OnOff status={false}/>
+                <h3>Controlled On/Off toggle with props </h3>
+                <OnOff indicator={indicator} setIndicator={() =>setIndicator(!indicator) }/>
                 <hr/>
+                <h3 className='App'>Uncontrolled On/Off toggle with local state</h3>
                 <OnOffWithState/>
                 <br/>
                 <hr/>
