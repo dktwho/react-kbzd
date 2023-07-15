@@ -37,7 +37,7 @@ function App() {
                 <br/>
                 <hr/>
                 <h2>Controlled component with outside props and data</h2>
-                <Rating value={ratingValue} onClick={setRatingValue}/>
+                <Rating value={ratingValue} setRatingValue={setRatingValue}/>
             </div>
         </div>
     );
