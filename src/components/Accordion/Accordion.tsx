@@ -1,14 +1,16 @@
 import React from "react";
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
     titleValue: string
-    collapsed?: boolean
+    accordion: boolean
+    setAccordion: (value: boolean) => void
+
 }
 export function Accordion(props: AccordionPropsType) {
     return (
         <div>
-            <AccordionTitle title={props.titleValue} />
-            {!props.collapsed && <AccordionBody  />  }
+            <AccordionTitle title={props.titleValue} setAccordion={props.setAccordion}  accordion={props.accordion} />
+            {!props.accordion && <AccordionBody  />  }
 
         </div>
     )
@@ -16,10 +18,13 @@ export function Accordion(props: AccordionPropsType) {
 
 type AccordionTitlePropsType = {
     title: string
+    accordion: boolean
+    setAccordion: (value: boolean) => void
+
 }
 function AccordionTitle(props: AccordionTitlePropsType) {
     return (
-        <h3>{props.title}</h3>
+        <h3 onClick={() => props.setAccordion(!props.accordion)}>{props.title}</h3>
     )
 }
 
