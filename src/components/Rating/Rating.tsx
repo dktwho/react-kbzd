@@ -20,16 +20,15 @@ export function Rating(props: RatingPropsType) {
     )
 }
 
-
 type StarPropsType = {
     selected: boolean
     setRatingValue: (value: RatingValueType) => void
-    value:  RatingValueType
+    value: RatingValueType
 }
 
 function Star(props: StarPropsType) {
 
     return (
-        <span onClick={() => props.setRatingValue(props.value) }> {props.selected ? <b>star</b> : 'star'}</span>
+        <span onClick={() => props.setRatingValue(props.value)}> {props.selected ? <b>star</b> : 'star'}</span>
     )
 }
