@@ -1,7 +1,12 @@
 import React, {useState} from "react";
+import {RatingValueType} from "../Rating/Rating";
 
-export function UnControlledRating() {
-    const [rating, setRating] = useState(0)
+
+type RatingPropsType = {
+    defaultValue?: RatingValueType
+}
+export function UnControlledRating(props: RatingPropsType) {
+    const [rating, setRating] = useState<RatingValueType>(props.defaultValue ? props.defaultValue: 0 )
 
     return (
         <div>
