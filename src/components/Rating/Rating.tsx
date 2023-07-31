@@ -3,7 +3,7 @@ import React from "react";
 
 export type RatingValueType = 1 | 2 | 3 | 4 | 5 | 0
 
-type RatingPropsType = {
+export type RatingPropsType = {
     value: RatingValueType
     setRatingValue: (value: RatingValueType) => void
 }
@@ -20,7 +20,7 @@ export function Rating(props: RatingPropsType) {
     )
 }
 
-type StarPropsType = {
+export type StarPropsType = {
     selected: boolean
     setRatingValue: (value: RatingValueType) => void
     value: RatingValueType
