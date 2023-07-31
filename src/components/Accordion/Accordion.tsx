@@ -6,11 +6,12 @@ export type AccordionPropsType = {
     setAccordion: (value: boolean) => void
 
 }
+
 export function Accordion(props: AccordionPropsType) {
     return (
         <div>
-            <AccordionTitle title={props.titleValue} setAccordion={props.setAccordion}  accordion={props.accordion} />
-            {!props.accordion && <AccordionBody  />  }
+            <AccordionTitle title={props.titleValue} setAccordion={props.setAccordion} accordion={props.accordion}/>
+            {!props.accordion && <AccordionBody/>}
 
         </div>
     )
@@ -22,6 +23,7 @@ type AccordionTitlePropsType = {
     setAccordion: (value: boolean) => void
 
 }
+
 function AccordionTitle(props: AccordionTitlePropsType) {
     return (
         <h3 onClick={() => props.setAccordion(!props.accordion)}>{props.title}</h3>
