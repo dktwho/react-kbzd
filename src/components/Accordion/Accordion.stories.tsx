@@ -13,6 +13,6 @@ export const UnCollapsedMode = () => <Accordion titleValue={'User'} accordion={f
 
 export const ModeChanging = () => {
     const [value, setValue] = useState<boolean>(false)
-    return <Accordion accordion={value} setAccordion={setValue} titleValue={'Users'} />
+    return <Accordion accordion={value} setAccordion={() => setValue(!value)} titleValue={'Users'} />
 
 }
