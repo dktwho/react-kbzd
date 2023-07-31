@@ -2,8 +2,11 @@ import React, {useState} from 'react';
 import styled from './OnOffWithState.module.css'
 
 
-export const OnOffWithState = () => {
-    const [indicator, setIndicator] = useState(false)
+export type PropsType = {
+    defaultOn?: boolean
+}
+export const OnOffWithState = (props: PropsType) => {
+    const [indicator, setIndicator] = useState(props.defaultOn )
 
     return (
         <div className={styled.container}>
