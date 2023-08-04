@@ -14,3 +14,9 @@
 .select.active .items {
     display: block;
 }
+
+.item.selected {
+    background-color: gray;
+    color: white
+}
+
