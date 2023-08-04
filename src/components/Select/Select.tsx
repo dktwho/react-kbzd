@@ -32,15 +32,18 @@ export const Select = (props: SelectPropsType) => {
     }
 
     const onKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
-        e.preventDefault()
-        for (let i = 0; i < props.items.length; i++) {
-            if (props.items[i].value === hoveredElementValue) {
-                if(props.items[i + 1])  {
-                    props.onChange(props.items[i + 1].value)
-                    break;
+        if(e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            for (let i = 0; i < props.items.length; i++) {
+                if (props.items[i].value === hoveredElementValue) {
+                    const prevElement = e.key === 'ArrowDown'  ? props.items[i + 1] : props.items[i - 1]
+                    if(prevElement)  {
+                        props.onChange(prevElement.value)
+                        break;
+                    }
                 }
             }
         }
+
     }
 
 
