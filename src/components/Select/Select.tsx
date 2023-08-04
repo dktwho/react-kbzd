@@ -12,21 +12,26 @@ export type SelectPropsType = {
     items: ItemType[]
 }
 export const Select = (props: SelectPropsType) => {
-    const [active, setActive] = useState(true)
+    const [active, setActive] = useState(false)
 
     const selectedItem = props.items.find(i => i.value === props.value)
 
+    const toggleItems = () => {
+        setActive(!active)
+    }
+
+    const onItemClick = (value: any) => {
+        props.onChange(value)
+        toggleItems()
+    }
+
+
     return (
         <>
-            <select>
-                <option value=''>React</option>
-                <option value=''>Vue</option>
-                <option value=''>Angular</option>
-            </select>
-            <div className={s.select + ' '}>
-                <h3>{selectedItem && selectedItem.title}---</h3>
+            <div className={s.select}>
+                <span className={s.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
                 {active &&     <div className={s.items}>
-                    {props.items.map(el => <div key={el.value}>{el.title}</div>)}
+                    {props.items.map(el => <div onClick={() => onItemClick(el.value)} key={el.value}>{el.title}</div>)}
                 </div> }
 
             </div>
