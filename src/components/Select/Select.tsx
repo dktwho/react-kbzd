@@ -1,4 +1,4 @@
-import React, {useState, KeyboardEvent} from 'react';
+import React, {useState, KeyboardEvent, useEffect} from 'react';
 import s from './Select.module.css'
 
 type ItemType = {
@@ -17,6 +17,10 @@ export const Select = (props: SelectPropsType) => {
 
     const selectedItem = props.items.find(i => i.value === props.value)
     const hoveredItem = props.items.find(i => i.value === hoveredElementValue)
+
+    useEffect(() => {
+        setHoveredElementValue(props.value)
+    }, [props.value])
 
     const toggleItems = () => {
         setActive(!active)
