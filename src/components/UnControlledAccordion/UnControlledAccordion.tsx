@@ -7,7 +7,7 @@ type AccordionPropsType = {
 
 export function UnControlledAccordion(props: AccordionPropsType) {
     // const [collapsed, setCollapsed] = useState(false)
-    const [collapsed, dispatch] = useReducer(reducer, false)
+    const [state, dispatch] = useReducer(reducer, {collapsed: false})
 
 
     const collapsedClick = () => {
@@ -16,7 +16,7 @@ export function UnControlledAccordion(props: AccordionPropsType) {
     return (
         <div>
             <AccordionTitle title={props.titleValue} collapsedClick={collapsedClick}/>
-            {collapsed ? <AccordionBody/> : ''}
+            {!state.collapsed ? <AccordionBody/> : ''}
         </div>
     )
 }
