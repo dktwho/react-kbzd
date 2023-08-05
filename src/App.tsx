@@ -38,9 +38,6 @@ function App() {
                 <Rating value={ratingValue} setRatingValue={setRatingValue}/>
                 <br/>
                 <hr/>
-                {/*<Select value={select}*/}
-                {/*        items={[{title: 'React', value: 1}, {title: 'Vue', value: 2}, {title: 'Angular', value: 3}]}*/}
-                {/*        onChange={(e: ChangeEvent<HTMLSelectElement>) => setSelect(e.currentTarget.value)}/>*/}
             </div>
         </div>
     );
