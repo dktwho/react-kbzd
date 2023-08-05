@@ -1,17 +1,18 @@
-const TOGGLE_CONSTANT = 'TOGGLE-COLLAPSED'
+const TOGGLE_COLLAPSED = 'TOGGLE_COLLAPSED'
 
 export type ActionType = {
     type: string
 }
 
-type StateType = {
+export type StateType = {
     collapsed: boolean
 }
 export const reducer = (state: StateType, action: ActionType):StateType => {
     switch (action.type) {
-        case TOGGLE_CONSTANT:
+        case TOGGLE_COLLAPSED:
             return {...state, collapsed: !state.collapsed};
         default:
-            return state
+            throw new Error('Bad action')
     }
+    return  state
 }

@@ -11,7 +11,7 @@ export function UnControlledAccordion(props: AccordionPropsType) {
 
 
     const collapsedClick = () => {
-        dispatch({type: 'TOGGLE-COLLAPSED'})
+        dispatch({type: 'TOGGLE_COLLAPSED'})
     }
     return (
         <div>
