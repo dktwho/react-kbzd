@@ -8,8 +8,9 @@ type ActionType = {
     type: string
 }
 
+const TOGGLE_CONSTANT = 'TOGGLE-COLLAPSED'
 const reducer = (state: boolean, action: ActionType ) => {
-    if(action.type === 'TOGGLE-COLLAPSED') {
+    if(action.type === TOGGLE_CONSTANT ) {
         return  !state
     }
     return state
