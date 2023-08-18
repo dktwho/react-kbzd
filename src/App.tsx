@@ -17,15 +17,17 @@ function App() {
         <div className="App">
             <div>
                 <PageTitle title={'This is App component!!!'}/>
-                Article 1
+                <h2>Controlled accordion with outside props used useState</h2>
                 <Accordion titleValue={'---Menu--click-'} accordion={accordion} setAccordion={setAccordion}/>
                 <br/>
                 <hr/>
                 <h2>Uncontrolled accordion with state inside for collapsed</h2>
                 <UnControlledAccordion titleValue={'---Frontend Stack--click-'}/>
                 <h2>Uncontrolled rating without props, used useState</h2>
-                Article 2
                 <UnControlledRating/>
+                <hr/>
+                <h2>Controlled Rating component with outside props and data</h2>
+                <Rating value={ratingValue} setRatingValue={setRatingValue}/>
                 <hr/>
                 <h3>Controlled On/Off toggle with props </h3>
                 <OnOff indicator={indicator} setIndicator={() => setIndicator(!indicator)}/>
@@ -33,11 +35,6 @@ function App() {
                 <h3 className='App'>Uncontrolled On/Off toggle with local state</h3>
                 <OnOffWithState/>
                 <br/>
-                <hr/>
-                <h2>Controlled component with outside props and data</h2>
-                <Rating value={ratingValue} setRatingValue={setRatingValue}/>
-                <br/>
-                <hr/>
             </div>
         </div>
     );
