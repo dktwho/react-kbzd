@@ -20,19 +20,16 @@ export const Clock: React.FC<PropsType> = (props) => {
         }
     }, [])
 
-    let view;
 
+    let view;
     switch (props.mode) {
         case 'analog': {
-            view = <span>Analog</span>
+            view = <AnalogClockView date={date}/>
             break;
         }
         case 'digital': {
-            view = <><span>{getTwoDigitsString(date.getHours())}</span>
-                :
-                <span>{getTwoDigitsString(date.getMinutes())}</span>
-                :
-                <span>{getTwoDigitsString(date.getSeconds())}</span></>
+            view = <DigitalClockView date={date}/>
+            break;
         }
     }
 
@@ -40,5 +37,24 @@ export const Clock: React.FC<PropsType> = (props) => {
         <div>
             {view}
         </div>
+    )
+}
+
+type ClockViewPropsType = {
+    date: Date
+}
+export const DigitalClockView: React.FC<ClockViewPropsType> = ({date}) => {
+    return (
+        <><span>{getTwoDigitsString(date.getHours())}</span>
+            :
+            <span>{getTwoDigitsString(date.getMinutes())}</span>
+            :
+            <span>{getTwoDigitsString(date.getSeconds())}</span></>
+    )
+}
+
+export const AnalogClockView: React.FC<ClockViewPropsType> = ({date}) => {
+    return (
+        <span>Analog</span>
     )
 }
