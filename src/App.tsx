@@ -7,6 +7,7 @@ import {OnOffWithState} from "./components/UnControlledOnOff/OnOffWithState";
 import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 import {Select} from "./components/Select/Select";
+import {Clock} from "./components/Clock/Clock";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
