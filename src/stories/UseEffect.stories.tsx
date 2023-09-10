@@ -61,16 +61,16 @@ export const SetTimeoutExample = () => {
 export const ResetEffectExample = () => {
     const [counter, setCounter] = useState(1)
 
-    console.log('component rendered')
+    console.log('component rendered', counter)
 
     useEffect(() => {
-        console.log('effect completed')
+        console.log('effect occurred', counter)
 
         return () => {
-            console.log('reset effect')
+            console.log('reset effect', counter)
         }
 
-    }, [])
+    }, [counter])
 
     const increase = () => {setCounter(counter + 1)}
 
