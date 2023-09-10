@@ -53,30 +53,42 @@ export const SetTimeoutExample = () => {
         Hello <h1>{counter}</h1> <h1>{fake}</h1>
         <br/>
         SetInterval
-       <div> {fake} - {counter}</div>
+        <div> {fake} - {counter}</div>
     </>
 }
 
 
 export const ResetEffectExample = () => {
     const [counter, setCounter] = useState(1)
-
     console.log('component rendered', counter)
-
     useEffect(() => {
         console.log('effect occurred', counter)
 
         return () => {
             console.log('reset effect', counter)
         }
-
     }, [counter])
 
-    const increase = () => {setCounter(counter + 1)}
-
+    const increase = () => {
+        setCounter(counter + 1)
+    }
     return <div>
         Hello {counter}
         <button onClick={increase}>+</button>
     </div>
+}
 
+export const KeysTrackerExample = () => {
+    const [text, setText] = useState('')
+    console.log('component rendered', text)
+
+    useEffect(() => {
+        window.document.addEventListener('keypress', (e) => {
+            setText((state) => state + e.key)
+        })
+    }, [])
+
+    return <div>
+        Typed text: {text}
+    </div>
 }
