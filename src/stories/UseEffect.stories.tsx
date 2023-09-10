@@ -39,12 +39,17 @@ export const SetTimeoutExample = () => {
             console.log('setTimeout called')
             document.title = counter.toString()
         }, 1000)
+
     }, [counter])
 
     // useEffect(() => {
-    //     setInterval(() => {
+    //     const interval = setInterval(() => {
     //         setCounter((state) => state + 1)
     //     }, 1000)
+    //
+    // return () => {
+    //     clearInterval(interval)
+    // }
     // }, [])
 
     return <>
@@ -87,7 +92,7 @@ export const KeysTrackerExample = () => {
     }
 
     useEffect(() => {
-        window.document.addEventListener('keypress',handler)
+        window.document.addEventListener('keypress', handler)
         return () => {
             window.document.removeEventListener('keypress', handler)
         }
@@ -107,9 +112,29 @@ export const KeysTrackerExample2 = () => {
     }
 
     useEffect(() => {
-        window.document.addEventListener('keypress',handler)
+        window.document.addEventListener('keypress', handler)
         return () => {
             window.document.removeEventListener('keypress', handler)
+        }
+    }, [text])
+
+    return <div>
+        Typed text: {text}
+    </div>
+}
+
+export const SetTimeoutExample2 = () => {
+    const [text, setText] = useState('')
+    console.log('component rendered', text)
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            console.log('timeout expired')
+            setText('3 seconds past')
+        }, 3000)
+
+        return () => {
+            clearTimeout(timeoutId)
         }
     }, [text])
 
